@@ -23,7 +23,7 @@ public class NotificacionesController : ControllerBase
         msg.SetTemplateData(new
         {
             name = datos.nombreDestino,
-            message = "Bienvenido a ventas y servicios axm."
+            message = "Bienvenido a la comunidad de la inmobiliaria."
         });
         var response = await client.SendEmailAsync(msg);
         if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
@@ -100,4 +100,8 @@ public class NotificacionesController : ControllerBase
         var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
         return msg;
     }
+
+    
+
+
 }
